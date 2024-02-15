@@ -34,7 +34,7 @@ def convert(Number,Basein):
             b += alpha.index(i) / k
             k *= Basein
         b = str(toBaseFrac(b, Baseout)).rstrip('0')
-        result=str(num) + '.' + b
+        result = ('-' if Number[0] == 0 else '') + str(num) + '.' + b
         return float(result)
     else:
         result =int(Number, Basein)
