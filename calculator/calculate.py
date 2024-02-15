@@ -69,7 +69,7 @@ convert_button.grid(row=3, column=0, columnspan=2, padx=5, pady=5)
 
 # Create result label
 result_label = tk.Label(root, text="")
-result_label.grid(row=4, column=0, columnspan=2, padx=5, pady=5)
+result_label.grid(row=4, column= 0, columnspan=2, padx=5, pady=5)
 
 # Start the main loop
 root.mainloop()
