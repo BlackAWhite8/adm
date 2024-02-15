@@ -34,13 +34,14 @@ def convert(Number,Basein):
             b += alpha.index(i) / k
             k *= Basein
         b = str(toBaseFrac(b, Baseout)).rstrip('0')
-        result = ('-' if Number[0] == 0 else '') + str(num) + '.' + b
+        result = str(num) + '.' + b
         return float(result)
     else:
         result =int(Number, Basein)
         return float(result)
 
-    
+
+
         
 def add():
         num1 = number1_entry.get()
