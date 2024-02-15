@@ -1,3 +1,4 @@
+#Соин, Мищенко, Чулков Бпм-22-3
 import tkinter as tk
 import converter as cr
 
