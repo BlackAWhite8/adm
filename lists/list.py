@@ -1,3 +1,4 @@
+#Соин, Мищенко, Чулков БПМ-22-3
 class ArrayList:
     def __init__(self):
         self.data = []
