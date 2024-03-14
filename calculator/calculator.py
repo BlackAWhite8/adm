@@ -1,4 +1,3 @@
-#Соин, Мищенко, Чулков Бпм-22-3
 import tkinter as tk
 import converter as cr
 
@@ -55,16 +54,16 @@ def add():
         basein1 = int(basein_entry1.get())
         basein2 = int(basein_entry2.get())
     except ValueError:
-        if basein_entry1.get() == '' or basein_entry2.get() == '':
+        if basein_entry1.get() == '' and basein_entry2.get() == '':
             basein1 = 10
             basein2 = 10
         else:
-            answer_label.config(text="Error")
+            answer_label.config(text="неправильно заданы числа или системы исчисления")
             return 
     try:
         answer_label.config(text=(convert(num1,basein1) + convert(num2,basein2)))
     except:
-        answer_label.config(text="Error")
+        answer_label.config(text="неправильно заданы числa или системы исчисления")
              
 def subtraction():
     try:
@@ -77,12 +76,12 @@ def subtraction():
             basein1 = 10
             basein2 = 10
         else:
-            answer_label.config(text="Error")
+            answer_label.config(text="неправильно заданы числa или системы исчисления")
             return 
     try:
         answer_label.config(text=(convert(num1,basein1) - convert(num2,basein2)))
     except:
-        answer_label.config(text="Error")
+        answer_label.config(text="неправильно заданы числa или системы исчисления")
 def division():
     try:
         num1 = number1_entry.get()
@@ -94,15 +93,14 @@ def division():
             basein1 = 10
             basein2 = 10
         else:
-            answer_label.config(text="Error")
+            answer_label.config(text="неправильно заданы числa или системы исчисления")
             return 
     try:
         answer_label.config(text=(convert(num1,basein1) / convert(num2,basein2)))
     except ZeroDivisionError:
-        print("делить на ноль нельзя")
-        answer_label.config(text="Error")
+        answer_label.config(text="делить на ноль нельзя")
     except:
-        answer_label.config(text="Error")
+        answer_label.config(text="неправильно заданы числa или системы исчисления")
             
 #Mul        
 def multiplay():
@@ -116,12 +114,12 @@ def multiplay():
             basein1 = 10
             basein2 = 10
         else:
-            answer_label.config(text="Error")
+            answer_label.config(text="неправильно заданы числa или системы исчисления")
             return 
     try:
         answer_label.config(text=(convert(num1,basein1) * convert(num2,basein2)))
     except:
-        answer_label.config(text="Error")
+        answer_label.config(text="неправильно заданы числa или системы исчисления")
         
 
 # Create the main window

@@ -29,23 +29,23 @@ def main():
             Number = number_entry.get()
             Basein = int(basein_entry.get())
             Baseout = int(baseout_entry.get())
+            alpha = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            if '.' in Number:
+                num, frac = map(str, Number.split('.'))
+                num = int(num, Basein)
+                a = toBASEint(num, Baseout)
+                b = 0
+                k = Basein
+                for i in frac:
+                    b += alpha.index(i) / k
+                    k *= Basein
+                b = str(toBaseFrac(b, Baseout)).rstrip('0')
+                result_label.config(text=a + '.' + b)
+            else:
+                result_label.config(text=toBASEint(int(Number, Basein), Baseout))
         except:
-            result_label.config(text="missed parametrs")
+            result_label.config(text="неправильно задано число или системы исчисления")
             return
-        alpha = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        if '.' in Number:
-            num, frac = map(str, Number.split('.'))
-            num = int(num, Basein)
-            a = toBASEint(num, Baseout)
-            b = 0
-            k = Basein
-            for i in frac:
-                b += alpha.index(i) / k
-                k *= Basein
-            b = str(toBaseFrac(b, Baseout)).rstrip('0')
-            result_label.config(text=a + '.' + b)
-        else:
-            result_label.config(text=toBASEint(int(Number, Basein), Baseout))
 
 
 # Create the main window
